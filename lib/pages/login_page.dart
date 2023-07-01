@@ -41,7 +41,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(
                 height: 20,
-                child: Text("ccnenrf"),
+                child: Text("Hey! Welcome to Utsav's Catalog"),
               ),
               Text(
                 "Welcome $name",
