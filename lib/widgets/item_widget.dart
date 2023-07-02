@@ -17,11 +17,19 @@ class ItemWidget extends StatelessWidget {
         ),
         child: ListTile(
           contentPadding: EdgeInsets.all(16),
-          leading: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.network(
-              item.image,
-              fit: BoxFit.cover,
+          leading: Container(
+            width: 64,
+            padding: EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 233, 223, 250),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.network(
+                item.image,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           title: Text(
@@ -40,13 +48,29 @@ class ItemWidget extends StatelessWidget {
               ),
             ),
           ),
-          trailing: Text(
-            "\$${item.price}",
-            textScaleFactor: 1.2,
-            style: TextStyle(
-              color: Colors.deepPurple,
-              fontWeight: FontWeight.bold,
-            ),
+          trailing: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "\$${item.price}",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.deepPurple,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 8),
+              Expanded(
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Handle button press
+                    print("Buy ${item.name}");
+                  },
+                  child: Text("Buy"),
+                ),
+              ),
+            ],
           ),
         ),
       ),
