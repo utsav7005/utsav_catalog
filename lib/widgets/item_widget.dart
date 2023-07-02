@@ -16,9 +16,6 @@ class ItemWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         child: ListTile(
-          onTap: () {
-            print("${item.name}");
-          },
           contentPadding: EdgeInsets.all(16),
           leading: ClipRRect(
             borderRadius: BorderRadius.circular(8),
