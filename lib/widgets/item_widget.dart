@@ -74,7 +74,7 @@ class ItemWidget extends StatelessWidget {
                     shape: StadiumBorder(),
                     // You can also specify other properties like padding, textStyle, etc.
                   ),
-                  child: Text("Add to Cart"),
+                  child: Text("Buy"),
                 ),
               ),
             ],

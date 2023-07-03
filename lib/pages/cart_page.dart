@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ucatalog/models/cart.dart';
 import 'package:ucatalog/widgets/themes.dart';
 
 class CartPage extends StatelessWidget {
@@ -38,7 +39,7 @@ class CartPage extends StatelessWidget {
 }
 
 class _CartTotal extends StatelessWidget {
-  const _CartTotal({super.key});
+  final _cart = CartModel();
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,7 @@ class _CartTotal extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(0.0),
               child: Text(
-                '\$99999',
+                '\$${_cart.totalPrice}',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -64,7 +65,13 @@ class _CartTotal extends StatelessWidget {
               padding: EdgeInsets.all(0),
               child: ElevatedButton(
                 onPressed: () {
-                  // Implement your buy button functionality here
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        "Buying not supported yet",
+                      ),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                     minimumSize: Size(100, 50),
@@ -94,10 +101,11 @@ class _CartList extends StatefulWidget {
 }
 
 class __CartListState extends State<_CartList> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        itemCount: 5,
+        itemCount: _cart.items?.length,
         itemBuilder: (context, index) => ListTile(
               leading: Icon(CupertinoIcons.arrow_right),
               trailing: IconButton(
@@ -106,7 +114,9 @@ class __CartListState extends State<_CartList> {
                   CupertinoIcons.circle,
                 ),
               ),
-              title: Text("Item 1"),
+              title: Text(
+                _cart.items[index].name,
+              ),
             ));
   }
 }
