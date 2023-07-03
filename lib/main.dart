@@ -16,11 +16,11 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       theme: Mytheme.lightTheme(context),
       darkTheme: Mytheme.darkTheme(context),
-      initialRoute: MyRoutes.homeroute,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         "/": (context) => HomePage(),
-        MyRoutes.homeroute: (context) => HomePage(),
-        MyRoutes.loginroute: (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );
   }

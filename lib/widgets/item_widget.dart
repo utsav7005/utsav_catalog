@@ -1,5 +1,6 @@
 import 'package:ucatalog/models/catalog.dart';
 import 'package:flutter/material.dart';
+import 'package:ucatalog/widgets/themes.dart';
 
 class ItemWidget extends StatelessWidget {
   final Item item;
@@ -21,7 +22,7 @@ class ItemWidget extends StatelessWidget {
             width: 64,
             padding: EdgeInsets.all(2),
             decoration: BoxDecoration(
-              color: Color.fromARGB(255, 233, 223, 250),
+              color: Mytheme.creamColor,
               borderRadius: BorderRadius.circular(8),
             ),
             child: ClipRRect(
@@ -44,7 +45,7 @@ class ItemWidget extends StatelessWidget {
             child: Text(
               item.desc,
               style: TextStyle(
-                color: Colors.grey[600],
+                color: Mytheme.darkBluishColor,
               ),
             ),
           ),
@@ -67,6 +68,10 @@ class ItemWidget extends StatelessWidget {
                     // Handle button press
                     print("Buy ${item.name}");
                   },
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.deepPurple),
+                  ),
                   child: Text("Buy"),
                 ),
               ),
