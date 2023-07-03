@@ -68,10 +68,13 @@ class ItemWidget extends StatelessWidget {
                     print("Buy ${item.name}");
                   },
                   style: ElevatedButton.styleFrom(
+                    backgroundColor: Mytheme
+                        .darkBluishColor, // Set the button's background color
                     shadowColor: Mytheme.darkBluishColor,
                     shape: StadiumBorder(),
+                    // You can also specify other properties like padding, textStyle, etc.
                   ),
-                  child: Text("Buy"),
+                  child: Text("Add to Cart"),
                 ),
               ),
             ],

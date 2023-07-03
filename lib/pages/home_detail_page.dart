@@ -10,7 +10,9 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: Mytheme.creamColor,
       body: SafeArea(
         bottom: false,
@@ -30,7 +32,7 @@ class HomeDetailPage extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topCenter,
                   child: SizedBox(
-                    width: 300,
+                    width: 350,
                     child: Column(
                       children: [
                         Padding(padding: EdgeInsets.all(8)),
@@ -41,6 +43,7 @@ class HomeDetailPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             color: Mytheme.darkBluishColor,
                           ),
+                          textAlign: TextAlign.center,
                         ),
                         SizedBox(height: 8),
                         Text(
@@ -50,6 +53,15 @@ class HomeDetailPage extends StatelessWidget {
                             color: Mytheme.darkBluishColor,
                           ),
                           textAlign: TextAlign.center,
+                        ),
+                        Padding(padding: EdgeInsets.all(8)),
+                        Text(
+                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque odio urna, gravida nec semper sed, sodales at magna. Pellentesque at quam rhoncus lacus commodo vestibulum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque odio urna, gravida nec semper sed, sodales at magna. Pellentesque at quam rhoncus lacus commodo vestibulum.',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Mytheme.darkBluishColor,
+                          ),
+                          textAlign: TextAlign.justify,
                         ),
                       ],
                     ),
@@ -88,7 +100,7 @@ class HomeDetailPage extends StatelessWidget {
                     shape: StadiumBorder() // Set the desired size of the button
                     ),
                 child: Text(
-                  'Buy',
+                  'Add to Cart',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
