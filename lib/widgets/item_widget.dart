@@ -61,16 +61,15 @@ class ItemWidget extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 8),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
                     // Handle button press
                     print("Buy ${item.name}");
                   },
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.deepPurple),
+                  style: ElevatedButton.styleFrom(
+                    shadowColor: Mytheme.darkBluishColor,
+                    shape: StadiumBorder(),
                   ),
                   child: Text("Buy"),
                 ),
