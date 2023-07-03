@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ucatalog/models/catalog.dart';
+import 'package:ucatalog/widgets/home_widgets/add_to_cart.dart';
 import 'package:ucatalog/widgets/themes.dart';
 
 class HomeDetailPage extends StatelessWidget {
@@ -90,24 +91,7 @@ class HomeDetailPage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(0),
-              child: ElevatedButton(
-                onPressed: () {
-                  // Implement your buy button functionality here
-                },
-                style: ElevatedButton.styleFrom(
-                    minimumSize: Size(100, 50),
-                    shape: StadiumBorder() // Set the desired size of the button
-                    ),
-                child: Text(
-                  'Add to Cart',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
+                padding: EdgeInsets.all(0), child: AddToCart(item: catalog)),
           ],
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:ucatalog/models/cart.dart';
 import 'package:ucatalog/models/catalog.dart';
 import 'package:flutter/material.dart';
+import 'package:ucatalog/widgets/home_widgets/add_to_cart.dart';
 import 'package:ucatalog/widgets/themes.dart';
 
 class ItemWidget extends StatelessWidget {
@@ -66,55 +67,12 @@ class ItemWidget extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: _AddToCart(item: item),
+                child: AddToCart(item: item),
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class _AddToCart extends StatefulWidget {
-  const _AddToCart({
-    super.key,
-    required this.item,
-  });
-
-  final Item item;
-
-  @override
-  State<_AddToCart> createState() => _AddToCartState();
-}
-
-class _AddToCartState extends State<_AddToCart> {
-  bool isAdded = false;
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        setState(() {
-          isAdded = !isAdded;
-        });
-        final _catalog = CatalogModel();
-        final _cart = CartModel();
-        _cart.catalog = _catalog;
-        _cart.add(widget.item);
-        setState(() {});
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor:
-            Mytheme.darkBluishColor, // Set the button's background color
-        shadowColor: Mytheme.darkBluishColor,
-        shape: StadiumBorder(),
-        // You can also specify other properties like padding, textStyle, etc.
-      ),
-      child: isAdded
-          ? Icon(CupertinoIcons.checkmark_alt)
-          : Text(
-              "Add To Cart",
-            ),
     );
   }
 }
