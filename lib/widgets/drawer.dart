@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:ucatalog/widgets/drawer_profile.dart';
+import 'package:ucatalog/widgets/themes.dart';
 
 class MyDrawer extends StatelessWidget {
-  const MyDrawer({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Drawer(
-          elevation: 16, // Increase the elevation value for higher z-index
+          elevation: 16,
           child: Container(
-            color: Colors.deepPurple,
+            color: Mytheme.darkcreamColor,
             child: ListView(
               padding: EdgeInsets.zero,
-              children: const [
-                DrawerHeader(
+              children: [
+                const DrawerHeader(
                   padding: EdgeInsets.zero,
                   child: UserAccountsDrawerHeader(
                     margin: EdgeInsets.zero,
-                    decoration: BoxDecoration(color: Colors.deepPurple),
+                    decoration:
+                        BoxDecoration(color: Color.fromARGB(255, 64, 59, 88)),
                     accountName: Text('Utsav Kaim'),
                     accountEmail: Text('utsav7005@gmail.com'),
                     currentAccountPicture: CircleAvatar(
@@ -38,6 +39,9 @@ class MyDrawer extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                 ),
                 ListTile(
                   leading: Icon(
@@ -50,6 +54,10 @@ class MyDrawer extends StatelessWidget {
                     style: TextStyle(
                       color: Colors.white,
                     ),
+                  ),
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
                   ),
                 ),
                 ListTile(

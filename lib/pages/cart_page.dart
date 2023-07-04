@@ -17,11 +17,7 @@ class CartPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: Text(
           "Cart",
-          style: TextStyle(
-              fontSize: 24,
-              color: Mytheme.darkBluishColor,
-              fontWeight: FontWeight.bold,
-              fontFamily: GoogleFonts.poppins().fontFamily),
+          style: TextStyle(),
         ),
       ),
       body: Column(children: [
@@ -67,13 +63,30 @@ class _CartTotal extends StatelessWidget {
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(
-                        "Buying not supported yet",
+                      backgroundColor: Mytheme.darkcreamColor,
+                      content: Card(
+                        elevation: 10.0,
+                        color: Mytheme
+                            .darkBluishColor, // Adjust the elevation value as desired
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Buying Not Supported Yet",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: Mytheme.creamColor,
+                                // Add any other desired text styles here
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   );
                 },
                 style: ElevatedButton.styleFrom(
+                    backgroundColor: Mytheme.darkBluishColor,
                     minimumSize: Size(100, 50),
                     shape: StadiumBorder() // Set the desired size of the button
                     ),

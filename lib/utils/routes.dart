@@ -1,6 +1,7 @@
 class MyRoutes {
-  static String loginRoute = "/login";
-  static String homeRoute = "/home";
-  static String homeDetailRoute = "/detail";
-  static String cartRoute = "/cart";
+  static const String loginRoute = "/login";
+  static const String homeRoute = "/home";
+  static const String homeDetailRoute = "/detail";
+  static const String cartRoute = "/cart";
+  static const String profileRoute = "/profile";
 }

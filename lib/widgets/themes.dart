@@ -8,11 +8,15 @@ class Mytheme {
       cardColor: Colors.white,
       canvasColor: creamColor,
       buttonTheme: ButtonThemeData(buttonColor: Colors.amber),
-      appBarTheme: const AppBarTheme(
-        color: Colors.white,
+      appBarTheme: AppBarTheme(
+        color: Colors.transparent,
         elevation: 0.0,
-        iconTheme: IconThemeData(color: Colors.black),
-        titleTextStyle: TextStyle(color: Colors.black),
+        iconTheme: IconThemeData(color: Mytheme.darkBluishColor, size: 32),
+        titleTextStyle: GoogleFonts.poppins(
+          color: Mytheme.darkBluishColor,
+          fontSize: 30,
+          fontWeight: FontWeight.w500,
+        ),
       ));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
@@ -28,7 +32,7 @@ class Mytheme {
         titleTextStyle: TextStyle(color: Colors.black),
       ));
   static Color creamColor = const Color(0xfff5f5f5);
-  static Color darkcreamColor = const Color.fromARGB(255, 38, 38, 39);
+  static Color darkcreamColor = Color.fromARGB(255, 44, 44, 47);
   static Color darkBluishColor = const Color(0xff403b58);
   static Color lightBluishColor = const Color.fromARGB(255, 141, 134, 176);
 }
