@@ -27,7 +27,7 @@ class ItemWidget extends StatelessWidget {
             width: 64,
             padding: EdgeInsets.all(2),
             decoration: BoxDecoration(
-              color: Mytheme.creamColor,
+              // color: Mytheme.creamColor,
               borderRadius: BorderRadius.circular(8),
             ),
             child: ClipRRect(
@@ -49,9 +49,6 @@ class ItemWidget extends StatelessWidget {
             padding: EdgeInsets.only(top: 8),
             child: Text(
               shortDesc,
-              style: TextStyle(
-                color: Mytheme.darkBluishColor,
-              ),
             ),
           ),
           trailing: Column(
@@ -62,7 +59,6 @@ class ItemWidget extends StatelessWidget {
                 "\$${item.price}",
                 textScaleFactor: 1.2,
                 style: TextStyle(
-                  color: Colors.deepPurple,
                   fontWeight: FontWeight.bold,
                 ),
               ),

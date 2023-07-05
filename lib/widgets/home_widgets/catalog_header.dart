@@ -19,7 +19,6 @@ class CatalogHeader extends StatelessWidget {
                   'Trending Products',
                   style: TextStyle(
                     fontSize: 20,
-                    color: Mytheme.darkBluishColor,
                   ),
                 ),
               ),

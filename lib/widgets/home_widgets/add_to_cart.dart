@@ -21,7 +21,7 @@ class _AddToCartState extends State<AddToCart> {
 
   @override
   Widget build(BuildContext context) {
-    bool isInCart = _cart.items.contains(widget.item) ?? false;
+    bool isInCart = _cart.items.contains(widget.item);
 
     return ElevatedButton(
         onPressed: () {
@@ -33,9 +33,7 @@ class _AddToCartState extends State<AddToCart> {
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor:
-              Mytheme.darkBluishColor, // Set the button's background color
-          shadowColor: Mytheme.darkBluishColor,
+          // Set the button's background color
           shape: StadiumBorder(),
           // You can also specify other properties like padding, textStyle, etc.
         ),

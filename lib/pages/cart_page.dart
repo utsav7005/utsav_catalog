@@ -118,9 +118,16 @@ class __CartListState extends State<_CartList> {
   @override
   Widget build(BuildContext context) {
     return _cart.items.isEmpty
-        ? Text('Nothing to show')
+        ? Text(
+            'Nothing to show',
+            style: TextStyle(
+                color: Mytheme.darkBluishColor.withOpacity(0.6),
+                fontSize: 20,
+                fontFamily: GoogleFonts.poppins().fontFamily),
+          )
         : ListView.builder(
-            itemCount: _cart.items?.length,
+            physics: BouncingScrollPhysics(),
+            itemCount: _cart.items.length,
             itemBuilder: (context, index) => ListTile(
                   leading: Icon(CupertinoIcons.arrow_right),
                   trailing: IconButton(
